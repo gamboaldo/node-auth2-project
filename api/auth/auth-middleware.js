@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const atob = require("atob");
+// const atob = require("atob");
 const { JWT_SECRET } = require("../secrets"); // use this secret!
 const User = require("../users/users-model");
 

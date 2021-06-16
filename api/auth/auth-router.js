@@ -5,9 +5,9 @@ const jwt = require("jsonwebtoken");
 const { checkUsernameExists, validateRoleName } = require("./auth-middleware");
 const { JWT_SECRET } = require("../secrets"); // use this secret!
 const { isValid } = require("../users/uses-service");
-const { default: jwtDecode } = require("jwt-decode");
+// const { default: jwtDecode } = require("jwt-decode");
 
-router.post("/register", validateRoleName, (req, res, next) => {
+router.post("/register", validateRoleName, (req, res) => {
   /**
     [POST] /api/auth/register { "username": "anna", "password": "1234", "role_name": "angel" }
     response:
@@ -40,7 +40,7 @@ router.post("/register", validateRoleName, (req, res, next) => {
   }
 });
 
-router.post("/login", checkUsernameExists, (req, res, next) => {
+router.post("/login", checkUsernameExists, (req, res) => {
   /**
     [POST] /api/auth/login { "username": "sue", "password": "1234" }
     response:
